@@ -1,2 +1,2 @@
 # UFC
-um site de lutas do UFC
+Um site sobre de lutas do UFC
