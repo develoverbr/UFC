@@ -1,70 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vídeos e Recursos - Meu Blog de Luta</title>
-  <script src="script.js" defer></script>  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos e Recursos - Meu Blog de Luta</title>
+    
+    <link rel="stylesheet" href="blogVdeo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Estilos do site -->
-  <link rel="stylesheet" href="blogVdeo.css">
+    <style>
+        /* CSS ESPECÍFICO PARA A JANELA (MODAL) */
+        .modal-fundo {
+            display: none; /* Começa invisível */
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); /* Fundo preto transparente */
+        }
 
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .modal-conteudo {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 25px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 700px; /* Largura máxima boa para leitura */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            position: relative;
+            color: #333; /* Texto preto para leitura no fundo branco */
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .fechar {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .fechar:hover {
+            color: #000;
+        }
+
+        /* Botão para abrir o texto */
+        .btn-luta {
+            background-color: #d32f2f; /* Vermelho UFC */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        
+        .btn-luta:hover {
+            background-color: #b71c1c;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Meu Blog Do Mundo Boxe</h1>
-    <p>As últimas Notícias Sobre Mundo Boxe.</p>
-  </header>
+    <header>
+        <h1>Meu Blog Do Mundo Boxe</h1>
+        <p>As últimas Notícias Sobre Mundo Boxe.</p>
+    </header>
 
+    <main>
 
+        <h2>Vídeos e Recursos Essenciais</h2>
+       
+        <img src="Chute.jpg" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px;" alt="Lutador Chutando">
+
+        <section class="video-section">
+            <h3>Vídeo em Destaque: Anderson Silva vs Vitor Belfort</h3>
+            
+            <div class="video-responsive">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/-VPzcEgEFEw" title="Anderson VS Vitor" frameborder="0" allowfullscreen></iframe>      
+            </div>
+            
+            <p>Assista a este vídeo para entender como foi o nocaute histórico.</p>
+            
+            <button class="btn-luta" onclick="abrirTextoLuta()">
+                <i class="fas fa-book-open"></i> Ler História da Luta
+            </button>
+        </section>
+         
+        <section class="download-section">
+            <h4>Recursos para Download</h4>
+            <p>Baixe nossos e-books, guias e materiais exclusivos em PDF.</p>
+            <ul>  
+                <li>
+                    <a href="boxe.pdf" download="Pdf Sobre Boxe">
+                        <i class="fas fa-file-pdf"></i> Boxe
+                    </a>
+                    <span> - Origem do Boxe.</span>
+                </li>
+            </ul>
+            <p style="font-size: 0.8em; opacity: 0.7;">Para abrir os arquivos PDF, você precisará de um leitor de PDF.</p>
+        </section>
+    </main>
+
+    <div class="newsletter-box">
+    <h3><i class="fas fa-paper-plane"></i> Receba Novidades</h3>
+    <p>Fique por dentro das últimas lutas.</p>
+    
+    <form onsubmit="assinarNewsletter(event)">
+        <div class="input-flex">
+            <input type="email" placeholder="Seu melhor e-mail..." required>
+            <button type="submit">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+    <footer>
+        <p>© 2025 Meu Blog de Lutas. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Alunos de Programação.</p>
+    </footer>
+
+    <div id="modalLuta" class="modal-fundo">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharTextoLuta()">&times;</span>
+            
+            <h2 style="border-bottom: 2px solid #d32f2f; padding-bottom: 10px;">Anderson Silva vs. Vitor Belfort: A Luta do Século</h2>
+            
+            <div style="line-height: 1.6; text-align: justify;">
+                <p>O duelo de MMA entre os lutadores brasileiros <strong>Anderson Silva</strong> e <strong>Vitor Belfort</strong>, que colocou em disputa o cinturão dos pesos-médios do UFC, ocorrida no dia 5 de fevereiro de 2011 no Mandalay Bay Events Center, em Las Vegas, Estados Unidos, é uma das inúmeras lutas apelidadas de <strong>Luta do Século</strong>.</p>
+                
+                <p>Esta luta é considerada o divisor de águas do MMA no Brasil, já que a partir deste evento, o interesse pelo esporte no país só cresceu. O programa <em>Sensei SporTV</em>, exibido antes do evento, obteve a maior audiência dos canais SporTV de todo o sábado.</p>
+
+                <blockquote style="background: #f9f9f9; border-left: 5px solid #d32f2f; padding: 10px; margin: 15px 0; font-style: italic;">
+                    "Eu nunca vi tantos veículos da imprensa brasileira em Las Vegas... Não há dúvida de que esse é um evento histórico para o país."<br>
+                    <small>— Ariel Helwani, jornalista do site MMA Fighting.</small>
+                </blockquote>
+
+                <p>A imagem do chute frontal dado por Anderson que explodiu no queixo de Belfort foi repetida à exaustão, transformando-se em um símbolo do esporte. Esse é provavelmente o golpe mais visto da história do UFC.</p>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <nav>
-    <ul>
-           
-    </ul>
-  </nav>
+    <script>
+        // Função para abrir o texto da luta
+        function abrirTextoLuta() {
+            document.getElementById("modalLuta").style.display = "block";
+        }
 
-  <main>
-    <h2>Vídeos e Recursos Essenciais</h2>
-   
-    <img src="Chute.jpg" width="600" height="400"
-     
+        // Função para fechar o texto da luta
+        function fecharTextoLuta() {
+            document.getElementById("modalLuta").style.display = "none";
+        }
 
+        // Fechar se clicar fora da janela branca
+        window.onclick = function(event) {
+            const modal = document.getElementById("modalLuta");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
-    <!-- Seção de Vídeo -->
-    <section class="video-section">
-      <h3>Vídeo em Destaque: Anderson Silva vs Vitor Belfort</h3>
-      <div class="video-responsive">
-<iframe width="1006" height="566" src="luta.mp4" title="Anderson VS Vitor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      <p>A inteligência artificial está revolucionando o mundo. Assista a este vídeo para entender as últimas tendências e o que esperar do futuro.</p>
-    </section>
-     
-
-    <!-- Seção de Downloads -->
-    <section class="download-section">
-      <h4>Recursos para Download</h3>
-      <p>Baixe nossos e-books, guias e materiais exclusivos em PDF.</p>
-      <ul>  
-          
-        <li>
-          <a href="boxe.pdf" download="Pdf Sobre Boxe">
-            <i class="fas fa-file-pdf"></i> Boxe
-          </a>
-          <span>() - Origem do Boxe.</span>
-        </li>
-      </ul>
-      <p>Para abrir os arquivos PDF, você precisará de um leitor de PDF como o Adobe Acrobat Reader.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Meu Blog de lutas. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Alunos de Programação.</p>
-  </footer>
+        // Sua função original de teste de input
+        function processarInput() {
+            const inputElemento = document.getElementById('meuInput');
+            const valorDigitado = inputElemento.value;
+            console.log("Valor:", valorDigitado);
+            document.getElementById('exibicao').textContent = "Você digitou: " + valorDigitado;
+        }
+    </script>
 
 </body>
 </html>

@@ -208,4 +208,64 @@
   footer p {
     margin: 5px 0;
   }
+
+  /* --- ESTILO DO FORMULÁRIO CURTO (NEWSLETTER) --- */
+.newsletter-box {
+    background-color: #1f1f1f; /* Um pouco mais claro que o fundo */
+    padding: 20px;
+    margin: 30px auto; /* Centralizado */
+    max-width: 400px; /* Tamanho máximo pequeno */
+    border-radius: 8px;
+    border-left: 4px solid #00d9ff; /* Detalhe azul neon na lateral */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.newsletter-box h3 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.newsletter-box p {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* Layout Flex para deixar botão e input na mesma linha */
+.input-flex {
+    display: flex;
+    gap: 10px; /* Espaço entre o input e o botão */
+}
+
+.newsletter-box input {
+    flex-grow: 1; /* Ocupa o espaço que sobrar */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #121212;
+    color: white;
+    outline: none;
+}
+
+.newsletter-box input:focus {
+    border-color: #00d9ff;
+}
+
+.newsletter-box button {
+    background-color: #00d9ff; /* Azul Neon */
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+.newsletter-box button:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
   
